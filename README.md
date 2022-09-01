@@ -60,11 +60,11 @@ Esta é a 3ª semana da turma online Todas em Tech on18 - Back-end, nesta aula d
 
 # Plano de Aula
 
-### 1. Revisão das estruturas condicionais
+## 1. Revisão das estruturas condicionais
 
-#### 1.1. Exercício de fixação do `if... else`
+### 1.1. Exercício de fixação do `if... else`
 
-#### 1.2. Switch/case
+### 1.2. Switch/case
 
 - A condicional switch avalia uma expressão, combinando o valor da expressão para um cláusula `case`, e executa as instruções associadas ao case. *(MDN)* Passamos o `break` para sair da condicional quando um case é correspondido e sua instrução executada. Caso nenhum case seja correspondido podemos usar a cláusula `default` (opcional)
 
@@ -91,12 +91,12 @@ switch (regiao) {
 ```
 
 ---
-### 2. Estruturas de repetição
+## 2. Estruturas de repetição
 
 - Podemos chamar também de Loop, laço ou método de iteração. Trata-se de comandos que mantém um trecho de código sendo executado até que uma condição de parada seja satisfeita;
 - Sua principal função é possibilitar que possamos repetir um trecho de código sem a necessidade de escrever várias vezes esse trecho, para isso basta ter um ponto de partida e um ponto de chegada para a repetição;
 
-#### 2.1. `for`
+### 2.1. `for`
 
 - É uma estrutura de repetição com variável de controle, usada quando se sabe exatamente o ponto de partida e de chegada, o bloco será repetido enquanto a condição for verdadeira, ou seja, para quando a condição retorne `false`.
 
@@ -106,7 +106,7 @@ switch (regiao) {
   }
 ```
 
-##### Exemplos:
+#### Exemplos:
 
 ```js
   for(let i = 0; i < 10; i++){ 
@@ -123,7 +123,7 @@ switch (regiao) {
   }
 ```
 
-#### 2.2. `while`
+### 2.2. `while`
 
 - Tem um funcionamento muito parecido com o do `for`, de executar sua intrução desde que a condição seja verdadeira, é sempre possível substituir o uso do `for` pelo do `while`, sendo o critério obter o código de melhor leitura, o `while` está mais atrelado à condição ser atendida enquanto o `for` é mais usado para iterar com contadores. 
 
@@ -133,7 +133,7 @@ switch (regiao) {
   }
 ```
 
-##### Exemplos:
+#### Exemplos:
 
 ```js
   let i = 1;
@@ -152,7 +152,7 @@ switch (regiao) {
   }
 ```
 
-#### 2.3.  `for... of`
+### 2.3.  `for... of`
 
 - É um laço que percorre objetos iterativos, sendo o mais comum a array, chamando uma função para cada valor deste objeto;
 
@@ -162,7 +162,7 @@ switch (regiao) {
   }
 ```
 
-##### Exemplo:
+#### Exemplo:
 
 ```js
   // utilizaremos a mesma array números criada no exemplo do for.
@@ -173,7 +173,7 @@ switch (regiao) {
 ```
 
 ---
-### 3. Escopo
+## 3. Escopo
   
   - É o contexto atual de execução, em que valores e expressões são "visíveis" ou podem ser referenciadas. *(MDN)* Podemos entender como um "lugar/parte" do código;
   
@@ -186,12 +186,12 @@ switch (regiao) {
   - Os escopos possuem camadas baseadas numa hierarquia, de modo que os escopos filhos tenham acesso aos escopos pais, mas não no sentido oposto.
 
 ---
-### 4. Funções
+## 4. Funções
   - É um bloco de comandos a serem executados quando solicitado, através de uma chamada direta ou em decorrência de um evento;
   - Uma função é o menor bloco de execução/construção no JavaScript, um conjunto de instruções que executa uma tarefa ou calcula um valor;
   - Uma função quando é chamada, pausa a thread (script) para realizar seu processamento, depois retorna o valor final e continua a execução da linha de código na sequência;
 
-#### 4.1. Declarando uma função
+### 4.1. Declarando uma função
 
 - O método mais comum de criar uma função no JS consiste no uso da palavra reservada `function`;
 - Em seguida nomeamos a função, é uma boa prática nomear com verbo para indicar a ação realizada pela função;
@@ -234,7 +234,7 @@ switch (regiao) {
   console.log(soma(3))
 ```
 
-#### 4.2. Arrow Function
+### 4.2. Arrow Function
 
 - Uma sintaxe mais cura e moderna em relação a expressão `function` e podem substituir em quase todos os casos de forma a diminuir a complexidade de leitura em diversos casos;
 - As arrow functions são geralmente anônimas, mas podem ser nomeadas ou atribuidas a variáveis para que possam ser invocadas; 
@@ -253,11 +253,11 @@ switch (regiao) {
 - A sintaxe das arrow functions é bastante comum em padrões funcionais como muito do que aprenderemos em métodos de arrays nas próximas aulas;
 
 ---
-### 5. Objetos
+## 5. Objetos
 
 Um objeto é uma coleção de dados e/ou funcionalidades relacionadas (que geralmente consistem em diversas variáveis e funções — que são chamadas de propriedades e métodos quando estão dentro de objetos). (MDN) Os objetos são formados por chave e valor
 
-#### 5.1. Criando um objeto:
+### 5.1. Criando um objeto:
 
 ```js
 
@@ -275,16 +275,16 @@ const aluna = {
 };
 ```
 
-#### 5.2. Acessando o valor de uma propriedade ou método de objetos usando:
+### 5.2. Acessando o valor de uma propriedade ou método de objetos usando:
 
-##### 5.2.1. Notação de ponto - Digitando o ponto, podemos acessar todos as propriedades e métodos encapsuladas dentro do objeto
+#### 5.2.1. Notação de ponto - Digitando o ponto, podemos acessar todos as propriedades e métodos encapsuladas dentro do objeto
 
 ```js
 console.log(aluna.nome.primeiro);
 aluna.saudacao();
 ```
 
-##### 5.2.2. Notação de cochetes - Usamos as chaves (como strings) para acessar o valor de um item
+#### 5.2.2. Notação de cochetes - Usamos as chaves (como strings) para acessar o valor de um item
 
 ```js
 console.log(aluna["nome"]["primeiro"]);
@@ -292,13 +292,13 @@ console.log(aluna["idade"]);
 console.log(aluna["interesses"][0]);
 ```
 
-#### 5.3. Desestruturando um objeto:
+### 5.3. Desestruturando um objeto:
 
 ```js
 const { idade, saudacao } = aluna;
 ```
 
-#### 5.4. Objeto Date e seus métodos;
+### 5.4. Objeto Date e seus métodos;
 
 - Cria uma instância JavaScript de Date que representa um único momento no tempo. Objetos Date são baseados no valor de tempo que é o número de milisegundos desde 1º de Janeiro de 1970 (UTC). (MDN)
 

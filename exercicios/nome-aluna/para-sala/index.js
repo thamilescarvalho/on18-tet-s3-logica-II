@@ -1,4 +1,3 @@
-
 const listaDePaises = [
   { 
     nome: "noruega",
@@ -11,10 +10,10 @@ const listaDePaises = [
   { 
     nome: "canadá",
     idh: 0.913
-  },
+  },  
   { 
     nome: "brasil",
-    idh: 0.755
+    idh: 0.755,
   },
   { 
     nome: "japão",
@@ -30,41 +29,52 @@ const listaDePaises = [
   },
   { 
     nome: "camarões",
-    idh: 0.512
+    idh: 0.512,
   }
 ]
 
+const listaDePaises2 = [
+  { 
+    nome: "peru",
+    idh: 0.999
+  },
+  { 
+    nome: "frança",
+    idh: 0.200
+  }
+]
+// for while for/of
 
-function classificarIdhPaises(lista) {
-  let idhPaises = new Object()
-
-  for(let pais of lista) {
+function classificarPaisesPorIdh(parametro_lista) {
+  let idhpaises = {}
+  for(let pais of parametro_lista) {
     if(pais.idh >=  0 && pais.idh < 0.5) {
-      idhPaises[pais.nome] = 'IDH é muito baixo'
+      idhpaises[pais.nome] = 'IDH é muito baixo'
     } else if (pais.idh >= 0.5 && pais.idh < 0.6) {
-      idhPaises[pais.nome] = 'IDH é baixo'
+      idhpaises[pais.nome] = 'IDH é baixo'
     } else if (pais.idh >= 0.6 && pais.idh < 0.7) {
-      idhPaises[pais.nome] = 'IDH é médio'
+      idhpaises[pais.nome] = 'IDH é médio'
     } else if (pais.idh >= 0.7 && pais.idh < 0.8) {
-      idhPaises[pais.nome] = 'IDH é alto'
+      idhpaises[pais.nome] = 'IDH é alto'
     } else if (pais.idh >= 0.8 && pais.idh <= 1) {
-      idhPaises[pais.nome] = 'IDH é muito alto'
+      idhpaises[pais.nome] = 'IDH é muito alto'
     } else {
-      idhPaises[pais.nome] = 'IDH inválido'
+      idhpaises[pais.nome] = 'IDH inválido'
     }
   }
-  console.log(idhPaises)
-} 
+  console.table(idhpaises)
+}
 
-classificarIdhPaises(listaDePaises)
-
+classificarPaisesPorIdh(listaDePaises)
+console.log('-------------------------------------')
+classificarPaisesPorIdh(listaDePaises2)
 
 //saída de dados
 /*
 const idhPaises = {
-  noruega: "classifiaçãp",
-  qatar: "classifiaçãp",
-  canada: "classifiaçãp",
+  noruega: "IDH é muito alto",
+  qatar: "IDH é muito alto",
+  canada: "IDH é muito alto",
   brasil: "classifiaçãp",
   japao: "classifiaçãp",
   vietna: "classifiaçãp",
