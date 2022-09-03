@@ -15,13 +15,36 @@ let clienteLilit = {
   ]
 }
 
-const calcularCompras = (compra) => {
+let clienteMegan = {
+  pagamento: 'pix',
+  carrinho: [
+    {produto: 'Bolsa pequena', valor: 49.0}, 
+    {produto: 'Cinto preto', valor: 62.0}, 
+    {produto: 'Jaqueta Jeans', valor: 350.0}, 
+    {produto: 'Calça preta', valor: 290.0}, 
+    {produto: 'Blusa simples', valor: 35.0}, 
+   
+  ]
+}
+
+let clienteThami = {
+  pagamento: 'cartão de crédito',
+  carrinho: [
+    {produto: 'Bolsa pequena', valor: 49.0}, 
+    {produto: 'Cinto preto', valor: 62.0},  
+    {produto: 'Salto agulha 39', valor: 250.0}, 
+    {produto: 'Tênis casual preto', valor: 120.0}, 
+    {produto: 'meia calça transparente', valor: 80.0}
+  ]
+}
+
+const calcularlistas = (lista) => {
   let valorTotal = 0
   let descontoAplicado = 0
   let valorFinal = 0
-  let quantidadeDeProdutos = compra.carrinho.length
+  let quantidadeDeProdutos = lista.carrinho.length
 
-  for(let item of compra.carrinho) {
+  for(let item of lista.carrinho) {
     valorTotal += item.valor
     if(item.valor >= 200.0) {
       // console.log('%200', item.produto, item.valor)
@@ -44,29 +67,29 @@ const calcularCompras = (compra) => {
     }
   }
 
-  // console.log(quantidadeDeProdutos, valorTotal, descontoAplicado, valorFinal)
 
-  if(compra.pagamento == "pix" || compra.pagamento == "a vista") {
+
+  if(lista.pagamento == "pix" || lista.pagamento == "a vista") {
     let desconto = valorFinal * 0.05
-    // console.log("DESCONTO DE 5%", desconto)
+    console.log("DESCONTO DE 5% PELA FORMA DE PAGAMENTO", desconto)
     valorFinal -= desconto
     descontoAplicado += desconto
-    // console.log("VALOR FINAL PARA PIX/AVISTA", valorFinal)
+
   }
 
-  // console.log(quantidadeDeProdutos, valorTotal, descontoAplicado, valorFinal)
-
   let notaFiscal = {
-    'Valor Total': valorTotal,
-    'Desconto Aplicado': descontoAplicado,
+    'Valor bruto': valorTotal,
+    'Total de desconto': descontoAplicado,
     'Valor à pagar': valorFinal
   }
 
   if(quantidadeDeProdutos > 10 || valorFinal > 800.0) {
-    notaFiscal['Bônus'] = 'Você ganhou um CUPOM de R$50,00 para sua próxima compra'
+    notaFiscal['Bônus'] = 'Você ganhou um CUPOM de R$50,00 para sua próxima lista'
   }
 
   console.table(notaFiscal)
 }
 
-calcularCompras(clienteLilit)
+calcularlistas(clienteLilit)
+calcularlistas(clienteMegan)
+calcularlistas(clienteThami)
